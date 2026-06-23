@@ -4,4 +4,4 @@ router = APIRouter()
 
 @router.get("/")
 def home():
-    return {"message": "Bem-vindo ao backend da Solvve"}
+    return {"message":"Backend Solvve Online"}
