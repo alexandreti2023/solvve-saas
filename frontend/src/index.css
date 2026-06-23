@@ -1,0 +1,102 @@
+@import "tailwindcss";
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.grid-lines {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(14,165,233,0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(14,165,233,0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  animation: moveGrid 25s linear infinite;
+}
+
+@keyframes moveGrid {
+
+  0% {
+    transform: translate(0,0);
+  }
+
+  100% {
+    transform: translate(60px,60px);
+  }
+
+}
+
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+}
+
+.glow-1 {
+  width: 500px;
+  height: 500px;
+  background: rgba(14,165,233,0.12);
+
+  top: 10%;
+  left: 5%;
+
+  animation: float1 12s ease-in-out infinite;
+}
+
+.glow-2 {
+  width: 450px;
+  height: 450px;
+  background: rgba(59,130,246,0.10);
+
+  top: 50%;
+  right: 10%;
+
+  animation: float2 15s ease-in-out infinite;
+}
+
+.glow-3 {
+  width: 350px;
+  height: 350px;
+  background: rgba(168,85,247,0.08);
+
+  bottom: 10%;
+  left: 40%;
+
+  animation: float3 18s ease-in-out infinite;
+}
+
+@keyframes float1 {
+
+  50% {
+    transform: translateY(-40px);
+  }
+
+}
+
+@keyframes float2 {
+
+  50% {
+    transform: translateX(-50px);
+  }
+
+}
+
+@keyframes float3 {
+
+  50% {
+    transform: translate(30px,-30px);
+  }
+
+}
