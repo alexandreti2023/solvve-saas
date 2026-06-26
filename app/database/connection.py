@@ -1,22 +1,14 @@
+from dotenv import load_dotenv
 import os
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = os.getenv(
-    "DATABASE_URL",
-    "sqlite:///./solvve.db"
-)
+load_dotenv()
 
-connect_args = {}
+DATABASE_URL = os.getenv("DATABASE_URL")
 
-if DATABASE_URL.startswith("sqlite"):
-    connect_args = {"check_same_thread": False}
-
-engine = create_engine(
-    DATABASE_URL,
-    connect_args=connect_args
-)
+engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(
     autocommit=False,
