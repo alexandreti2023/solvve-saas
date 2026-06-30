@@ -27,3 +27,8 @@ class Client(Base):
         Integer,
         ForeignKey("users.id")
     )
+    company_id = Column(
+    Integer,
+    ForeignKey("companies.id"),
+    nullable=True
+)

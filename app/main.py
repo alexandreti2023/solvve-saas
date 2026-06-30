@@ -20,10 +20,7 @@ from app.models.document import Document
 
 app = FastAPI()
 
-Base.metadata.create_all(bind=engine)
 app.include_router(document_router)
-
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 

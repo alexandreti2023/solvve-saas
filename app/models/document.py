@@ -22,3 +22,8 @@ class Document(Base):
         "Process",
         back_populates="documents"
     )
+    company_id = Column(
+    Integer,
+    ForeignKey("companies.id"),
+    nullable=True
+)

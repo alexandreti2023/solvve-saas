@@ -42,3 +42,8 @@ class Process(Base):
     back_populates="process",
     cascade="all, delete"
 )
+    company_id = Column(
+    Integer,
+    ForeignKey("companies.id"),
+    nullable=True
+)

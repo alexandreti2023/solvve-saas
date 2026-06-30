@@ -50,9 +50,10 @@ def login(
 
         token = create_access_token(
             data={
-                "user_id": user.id,
-                "email": user.email
-            }
+            "user_id": user.id,
+            "email": user.email,
+            "company_id": user.company_id
+        }
         )
 
         return {
